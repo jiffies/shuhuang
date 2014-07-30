@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<title>
+			书荒网
+		</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'books/style.css' %}"/>
+
+	</head>
+	<body>
+		<div id="bookapp">
+			<header>
+				<h1>欢迎来到书荒网</h1>
+			</header>
+			<section id="book">
+				<li></li>
+			</section>
+		</div>
+
+		<script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'bower_components/underscore/underscore.js' %}"></script>
+		<script type="text/javascript" src="{% static 'bower_components/backbone/backbone.js' %}"></script>
+		<script type="text/javascript" src="{% static 'books/app.js' %}"></script>
+		<script type="text/template" id="item-template">
+			<div id="title"><p><%- title %></p></div>
+				<div id="author"><p><%- author %></p></div>
+				<!--<div id="intro"><p><%- introduction %></p></div>	-->
+		</script>
+		<script type="text/template" id="ctl-template">
+			<button type="button" id="next">Next</button>
+			<button type="button" id="prev">Prev</button>
+		</script>
+	</body>
+</html>
