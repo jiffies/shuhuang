@@ -1,30 +1,42 @@
 {% load staticfiles %}
+<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
 			书荒网
 		</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'bower_components/bootstrap/dist/css/bootstrap-theme.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'bower_components/Buttons/css/buttons.css' %}"/>
 		<link rel="stylesheet" type="text/css" href="{% static 'books/style.css' %}"/>
 
 	</head>
 	<body>
-		<div id="bookapp">
-			<header>
-				<h1>欢迎来到书荒网</h1>
-			</header>
-			<section id="book">
+		<div id="nav">
+				<h1 id="name">书荒网</h1>
+		</div>
+		<div id="contain" class="container">
+			<div id="bookapp" class="row">
+				<ul class="col-md-6 col-md-offset-3 text-center jumbotron"  id="book">
+				<h3 id="title">猜您喜欢这本书</h3>
 				<li></li>
-			</section>
+				</ul>
+				<a href="#" id="nextbook" class="button button-circle button-action">换一本书</a>
+			</div>
 		</div>
 
 		<script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
 		<script type="text/javascript" src="{% static 'bower_components/underscore/underscore.js' %}"></script>
 		<script type="text/javascript" src="{% static 'bower_components/backbone/backbone.js' %}"></script>
 		<script type="text/javascript" src="{% static 'books/app.js' %}"></script>
+		<script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
 		<script type="text/template" id="item-template">
-			<div id="title"><p><%- title %></p></div>
-				<div id="author"><p><%- author %></p></div>
-				<!--<div id="intro"><p><%- introduction %></p></div>	-->
+			<p class="title"><%- title %></p>
+			<p class="author"><%- author %></p>
+				<!--<div class="intro"><p><%- introduction %></p></div>	-->
 		</script>
 		<script type="text/template" id="ctl-template">
 			<button type="button" id="next">Next</button>
